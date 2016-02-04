@@ -1,10 +1,11 @@
 # framer
 
-origin = framer(); // returns the origin window object // No scope means no fetching
+// returns the origin window object
+// No scope means no fetching a scope
+origin = framer();
 
-origin = framer("inside"); // returns the origin window object and sets a scope name for this requesting frame (overwriting any current scope with that name)
-
-var directlyAbove = origin.above(); // or var directlyAbove = origin.above(0);
+// returns the origin window object and sets a scope name for this requesting frame (overwriting any current scope with that name)
+origin = framer("inside"); 
 
 var inside = origin.fetch("inside"); // returns the window object for the scope "inside"
 
@@ -22,4 +23,5 @@ Just place framer.js in every file and you can access framer().origin() for the 
 
 var topMostFrameParent = framer().origin();
 
+// Add something like an Event Framework that all your frames can listen to and trigger
 var events = topMostFrameParent.events = new YourSnazzyEventFramework();
