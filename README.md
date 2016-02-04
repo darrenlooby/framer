@@ -1,15 +1,15 @@
-# framer
+#Framer
 
-// returns the origin window object
-// No scope means no fetching a scope
+returns the origin window object
+No scope means no fetching a scope
 origin = framer();
 
-// returns the origin window object and sets a scope name for this requesting frame (overwriting any current scope with that name)
+returns the origin window object and sets a scope name for this requesting frame (overwriting any current scope with that name)
 origin = framer("inside"); 
 
 var inside = origin.fetch("inside"); // returns the window object for the scope "inside"
 
-Use Case
+#Use Case
 
 You've a nested iFrame environment, the top most frame may or may not be in your code base.
 
@@ -23,5 +23,5 @@ Just place framer.js in every file and you can access framer().origin() for the 
 
 var topMostFrameParent = framer().origin();
 
-// Add something like an Event Framework that all your frames can listen to and trigger
+Add something like an Event Framework that all your frames can listen to and trigger
 var events = topMostFrameParent.events = new YourSnazzyEventFramework();
